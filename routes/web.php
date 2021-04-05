@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\ConverterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,4 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', [ConverterController::class, 'index']);
+Route::post('/', [ConverterController::class, 'converter'])->name('converter');
+Route::view('/about', 'about',)->name('about');
 
